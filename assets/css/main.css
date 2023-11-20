@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+  font-family: 'Fontbaru'; /* Ganti dengan nama font yang diinginkan */
+  src: url('~/static/fonts/fontbaru.ttf') format('truetype'); /* Sesuaikan dengan lokasi file font dan formatnya */
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body{
+    background-color: white;
+    overflow-x:hidden;
+
+}
+
+ul {
+    list-style: none;
+  }
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  @media screen and (min-width:320px) {
+    body{
+      overflow-x: hidden;
+    }
+  }
+  
