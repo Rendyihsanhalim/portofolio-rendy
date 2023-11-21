@@ -11,13 +11,10 @@
               <nuxt-link to="/" class="nav__link">Home</nuxt-link>
             </li>
             <li class="nav__item">
-              <a to="/Product" class="nav__link">Product</a>
+              <a to="/Product" class="nav__link">About Me</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link">Inspiration</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link">About Us</a>
+              <a class="nav__link">Project</a>
             </li>
           </ul>
           

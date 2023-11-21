@@ -45,73 +45,75 @@ export default {
         },
       });
 
-     
 
 
-      if(window.innerHeight < 950){
-      this.$gsap.to('.home__text', {
-        y: -200,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '.home__circle3',
-          start: 'top 65%',
-          end: 'top 40%',
-          scrub: true,
-        },
-      });
 
-         this.$gsap.to('.home__circle2', {
-        x: 2000,
-        scale:0.25,
-        duration: 10,
-        scrollTrigger: {
-          trigger: '.home__circle3',
-          start: 'top 65%',
-          end: 'top 30%',
-          scrub: true,
-        },
-      });
+      if (window.innerHeight < 950) {
+        this.$gsap.to('.home__text', {
+          y: -200,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: '.home__circle3',
+            start: 'top 65%',
+            end: 'top 40%',
+            scrub: true,
+          },
+        });
+
+        this.$gsap.to('.home__circle2', {
+          x: 1500,
+          scale: 0.25,
+          duration: 10,
+          scrollTrigger: {
+            trigger: '.home__circle3',
+            start: 'top 65%',
+            end: 'top 30%',
+            scrub: true,
+          },
+        });
 
         this.$gsap.to('.home__circle1', {
-        x: -2000,
-        scale:1.5,
-        duration: 10,
-        scrollTrigger: {
-          trigger: '.home__circle3',
-          start: 'top 65%',
-          end: 'top 30%',
-          scrub: true,
-        },
-      });
+          x: -1500,
+          scale: 1.5,
+          duration: 10,
+          scrollTrigger: {
+            trigger: '.home__circle3',
+            start: 'top 65%',
+            end: 'top 30%',
+            scrub: true,
+          },
+        });
 
-    };
+      };
 
-      if(window.innerHeight > 950 && window.innerHeight <1179){
+      if (window.innerHeight > 950 && window.innerHeight < 1179) {
         this.$gsap.to('.home__text', {
-        y: -200,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '.home__circle3',
-          start: 'top 35%',
-          end: 'top 50%',
-          scrub: true,
-        },
-      })};
+          y: -200,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: '.home__circle3',
+            start: 'top 35%',
+            end: 'top 50%',
+            scrub: true,
+          },
+        })
+      };
 
-      if(window.innerHeight > 1179 ){
+      if (window.innerHeight > 1179) {
         this.$gsap.to('.home__text', {
-        y: -200,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: '.home__circle3',
-          start: 'top 55%',
-          end: 'top 80%',
-          scrub: true,
-        },
-      })};
+          y: -200,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: '.home__circle3',
+            start: 'top 55%',
+            end: 'top 80%',
+            scrub: true,
+          },
+        })
+      };
     },
   },
   mounted() {
@@ -177,7 +179,6 @@ export default {
   top: 3rem;
   right: 10rem;
   width: 500px;
-
 }
 
 .button__home {
@@ -189,7 +190,6 @@ export default {
   font-weight: 400;
   transition: .3s;
   cursor: pointer;
-
 }
 
 .button__home:hover {
@@ -327,17 +327,18 @@ export default {
     left: -4rem;
   }
 
-  .home__text{
-    opacity:1;
+  .home__text {
+    opacity: 1;
   }
 }
 
 @media screen and (min-width:912px) {
-  home{
-    margin-top:15rem;
+  home {
+    margin-top: 15rem;
   }
-  
+
 }
+
 @media screen and (min-height: 800px) and (max-height: 950px) {
   .home__circle3 {
     top: 18rem;
@@ -355,6 +356,7 @@ export default {
     /* Styles for screens with a minimum height of 800px and maximum height of 932px */
   }
 }
+
 @media screen and (min-height: 1025px) {
   .home__circle3 {
     top: 16rem;
