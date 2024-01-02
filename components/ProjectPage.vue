@@ -6,7 +6,14 @@
           <a class="navigation_link navigation_link1" @click="toggleParagraph('aboutMe')">
             <span data-text="AboutMe">AboutMe</span>
             <div class="hover-content" ref="paragraph" :class="{ 'show__paragraph': showAboutMe, 'slide-in': showAboutMe }">
-              <p class="paragraph">This is information about me.</p>
+              <div class="content-container">
+                <p class="paragraph">
+                  Hi, I'm Rendy Ihsan, a math graduate passionate about front-end web development.
+                  With a knack for analytical thinking, I'm dedicated to mastering front-end technologies, believing in the impact of intuitive user interfaces.
+                  As a committed learner and creative coder, I enjoy turning ideas into reality. Let's connect and explore the exciting world of web development!
+                </p>
+                <img src="~/assets/img/unnamed.jpg" alt="">
+              </div>
             </div>
           </a>
         </div>
@@ -42,20 +49,25 @@ export default {
         this.showAboutMe = false;
       }
     },
-    handleScroll() {
-      console.log("adas")
-      this.scrollPosition = window.scrollY || window.scrollTop || document.documentElement.scrollTop;
 
-      const scrollThreshold = 400;
-
-      if (this.scrollPosition > scrollThreshold) {
-        this.showAboutMe = false;
-        this.showProjects = false;
-      }
-    },
+    gsapAnimasi(){
+      this.$gsap.from('.navigation_link1', {
+          x: -400,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: '.overlay',
+            start: 'top 68%',
+            end: 'top 100%',
+            scrub: true,
+            markers:true,
+          },
+        })
+    }
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
+    this.gsapAnimasi();
   },
   beforeDestroy() {
     window.removeEventListener('scroll', this.handleScroll);
@@ -81,6 +93,8 @@ export default {
 .navigation_container {
   display: flex;
   flex-direction: column;
+  row-gap: 3.5rem;
+  margin-top: 5rem;
 }
 
 .navigation_link span {
@@ -90,24 +104,35 @@ export default {
   font-family: "Fontbaru";
   font-size: 78px; /* Adjusted font size */
 }
-.hover-content p{
-  font-size:2.5rem;
+.hover-content p {
+  font-size: 1.5rem;
   font-family: "Montserrat";
+  line-height: 1.6rem;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-container img{
+  width:300px;
+  margin-bottom:5rem;
 }
 
 .navigation_link {
   color: rgba(255, 255, 255, 0.3);
   position: relative;
   display: inline-block;
-  transition: margin-bottom 0.3s ease; /* Added transition for smooth effect */
+  transition: margin-bottom 1s ease; /* Added transition for smooth effect */
 }
 
 .show-link {
-  margin-bottom: 10rem;
+  margin-bottom: 15rem;
 }
 
-.show__paragraph{
-    left:0;
+.show__paragraph {
+  left: 0;
 }
 
 .hover-content {
@@ -117,15 +142,15 @@ export default {
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
   padding: 10px;
-  width: 500px;
-  border-radius: 5px;
-  transition: left 1s;
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  transition: left 0.8s;
 }
-
 
 .slide-in {
   left: 0;
-  transform: translateX(100%); /* Initial position off-screen to the right */
+  transform: translateX(10%); /* Initial position off-screen to the right */
 }
 
 .show__paragraph {

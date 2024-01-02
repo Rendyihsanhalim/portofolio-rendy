@@ -128,6 +128,7 @@ export default {
   margin-inline: 3rem;
   margin-top: 4rem;
   position: relative;
+  scroll-behavior: smooth;
 }
 
 .home__container {
