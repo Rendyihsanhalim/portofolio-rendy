@@ -52,7 +52,7 @@ export default {
         this.$gsap.to('.home__text', {
           y: -200,
           opacity: 0,
-          duration: 1,
+          duration: 10,
           scrollTrigger: {
             trigger: '.home__circle3',
             start: 'top 65%',
@@ -91,7 +91,7 @@ export default {
         this.$gsap.to('.home__text', {
           y: -200,
           opacity: 0,
-          duration: 1,
+          duration: 10,
           scrollTrigger: {
             trigger: '.home__circle3',
             start: 'top 35%',
@@ -105,7 +105,7 @@ export default {
         this.$gsap.to('.home__text', {
           y: -200,
           opacity: 0,
-          duration: 1,
+          duration: 10,
           scrollTrigger: {
             trigger: '.home__circle3',
             start: 'top 55%',
