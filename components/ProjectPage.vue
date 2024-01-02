@@ -30,7 +30,7 @@
   </section>
 </template>
 
-<script>
+<script type="module">
 export default {
   data() {
     return {
@@ -57,13 +57,25 @@ export default {
           duration: 1,
           scrollTrigger: {
             trigger: '.overlay',
-            start: 'top 68%',
+            start: 'top 80%',
             end: 'top 100%',
-            scrub: true,
+          },
+        });
+      this.$gsap.from('.navigation_link2', {
+          x: -400,
+          opacity: 0,
+          duration: 1,
+          scrollTrigger: {
+            trigger: '.overlay',
+            start: 'top 70%',
+            end: 'top 100%',
             markers:true,
           },
-        })
-    }
+        });
+
+
+    },
+    
   },
   mounted() {
     window.addEventListener('scroll', this.handleScroll);
@@ -134,6 +146,7 @@ export default {
 .show__paragraph {
   left: 0;
 }
+
 
 .hover-content {
   position: absolute;
